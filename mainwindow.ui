@@ -30,7 +30,7 @@
      <x>0</x>
      <y>0</y>
      <width>769</width>
-     <height>26</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -55,9 +55,17 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="action_N"/>
+   <addaction name="action_O"/>
+   <addaction name="action_S"/>
+   <addaction name="action_A"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="action_N">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/images/new.png</normaloff>:/res/images/new.png</iconset>
+   </property>
    <property name="text">
     <string>新建文件(&amp;N)</string>
    </property>
@@ -66,6 +74,10 @@
    </property>
   </action>
   <action name="action_C">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/images/close.png</normaloff>:/res/images/close.png</iconset>
+   </property>
    <property name="text">
     <string>关闭文件(&amp;C)</string>
    </property>
@@ -74,6 +86,10 @@
    </property>
   </action>
   <action name="action_S">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/images/save.png</normaloff>:/res/images/save.png</iconset>
+   </property>
    <property name="text">
     <string>保存文件(&amp;S)</string>
    </property>
@@ -82,6 +98,10 @@
    </property>
   </action>
   <action name="action_A">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/images/saveas.png</normaloff>:/res/images/saveas.png</iconset>
+   </property>
    <property name="text">
     <string>文件另存为(&amp;A)</string>
    </property>
@@ -90,6 +110,10 @@
    </property>
   </action>
   <action name="action_E">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/images/exit.png</normaloff>:/res/images/exit.png</iconset>
+   </property>
    <property name="text">
     <string>退出(&amp;E)</string>
    </property>
@@ -98,12 +122,18 @@
    </property>
   </action>
   <action name="action_O">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/images/open.png</normaloff>:/res/images/open.png</iconset>
+   </property>
    <property name="text">
     <string>打开文件(&amp;O)</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

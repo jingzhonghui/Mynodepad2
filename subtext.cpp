@@ -29,13 +29,16 @@ void SubText::CloseFile(QString filename)
 }
 
 //保存文件
-void SubText::SaveFile()
+QString SubText::SaveFile()
 {
     bool saveflag=false;
+    QString filename;
     if(filepath.isEmpty())
     {
         filepath=QFileDialog::getSaveFileName(this,"保存文件","./new.txt","Text (*.txt)");
         QFile file(filepath);
+        QFileInfo fileinfo(file);
+        filename=fileinfo.fileName();
         if(file.open(QIODevice::Text | QIODevice::WriteOnly))
         {
             file.write(this->toPlainText().toUtf8());
@@ -47,6 +50,8 @@ void SubText::SaveFile()
     else
     {
         QFile file(filepath);
+        QFileInfo fileinfo(file);
+        filename=fileinfo.fileName();
         if(file.open(QIODevice::Text | QIODevice::WriteOnly))
         {
             file.write(this->toPlainText().toUtf8());
@@ -58,6 +63,11 @@ void SubText::SaveFile()
     if(!saveflag)
     {
          QMessageBox::information(this,"提示","文件保存失败，可能是文件路径获取失败!");
+         return QString();
+    }
+    else
+    {
+        return filename;
     }
 }
 

@@ -110,7 +110,9 @@ void MainWindow::CloseFile()
 void MainWindow::SaveFile()
 {
     SubText *subtext=qobject_cast<SubText *>(ui->tabWidget->currentWidget());
-    subtext->SaveFile();
+    QString filename= subtext->SaveFile();
+    if(!filename.isEmpty())
+        ui->tabWidget->setTabText(ui->tabWidget->currentIndex(),filename);
 }
 
 //文件另存为
